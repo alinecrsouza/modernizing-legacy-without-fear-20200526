@@ -7,6 +7,7 @@ final class OrderListActionTest extends TestCase
     /**
      * @medium
      * @group edge-to-edge
+     * @covers OrderListAction
      */
     public function test_can_be_retrieved_as_JSON_document_by_HTTP_request(): void
     {

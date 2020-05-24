@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
  * @large
  * @group end-to-end
  * @group characterization
+ * @coversNothing
  */
 final class OrderTest extends TestCase
 {

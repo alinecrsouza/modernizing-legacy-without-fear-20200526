@@ -2,6 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers OrderMapper
+ */
 final class OrderMapperTest extends TestCase
 {
     public function testMapsQueryResult(): void
