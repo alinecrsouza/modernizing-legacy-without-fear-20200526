@@ -12,6 +12,9 @@
         <testsuite name="unit">
             <directory>tests/unit</directory>
         </testsuite>
+        <testsuite name="integration">
+            <directory>tests/edge-to-edge</directory>
+        </testsuite>
         <testsuite name="end-to-end">
             <directory>tests/end-to-end</directory>
         </testsuite>
