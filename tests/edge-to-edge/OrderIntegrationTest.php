@@ -7,15 +7,14 @@ final class OrderIntegrationTest extends TestCase
     /**
      * @medium
      * @group edge-to-edge
-     * @runInSeparateProcess
      */
     public function test_can_be_retrieved_as_JSON_document_by_HTTP_request(): void
     {
         $_GET['jahr'] = 2020;
 
-        require __DIR__ . '/../../htdocs/auftraege_als_json.php';
+        $response = (new Factory())->getOrderListAction()->execute();
 
-        $json   = $this->getActualOutputForAssertion();
+        $json   = $response->body();
         $orders = json_decode($json, true);
 
         $this->assertSame(
@@ -31,7 +30,7 @@ final class OrderIntegrationTest extends TestCase
 
         $this->assertContains(
             'Content-Type: application/json; charset=utf-8',
-            xdebug_get_headers()
+            $response->headers()
         );
     }
 }

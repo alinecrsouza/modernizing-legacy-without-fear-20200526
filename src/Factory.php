@@ -18,4 +18,12 @@ final class Factory
     {
         return new Configuration;
     }
+
+    public function getOrderListAction(): OrderListAction
+    {
+        return new OrderListAction(
+            new OrdersInYearStatement($this->getDatabase()),
+            new OrderMapper
+        );
+    }
 }
