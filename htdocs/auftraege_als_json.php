@@ -1,8 +1,10 @@
 <?php
-require __DIR__ . '/includes/config.php';
-require __DIR__ . '/includes/db.php';
+require __DIR__ . '/../src/autoload.php';
 
-$result = $DB->query(
+$factory = new Factory;
+$db = $factory->getDatabase();
+
+$result = $db->query(
     'SELECT *
        FROM auftrag, kunde
       WHERE auftrag.kunden_id = kunde.kunden_id
@@ -21,4 +23,3 @@ foreach ($result as $row) {
 
 header('Content-Type: application/json; charset=utf-8');
 print json_encode($auftraege) . PHP_EOL;
-
