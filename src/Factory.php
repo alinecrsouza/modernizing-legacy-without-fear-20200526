@@ -2,11 +2,11 @@
 
 final class Factory
 {
-    public function getDatabase(): Database
+    public function getDatabase(): MysqlDatabase
     {
         $configuration = $this->getConfiguration();
 
-        return new Database(
+        return new MysqlDatabase(
             $configuration->databaseHostname(),
             $configuration->databaseUsername(),
             $configuration->databasePassword(),

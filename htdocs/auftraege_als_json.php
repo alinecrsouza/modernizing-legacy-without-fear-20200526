@@ -4,13 +4,8 @@ require __DIR__ . '/../src/autoload.php';
 $factory = new Factory;
 $db = $factory->getDatabase();
 
-$result = $db->query(
-    'SELECT *
-       FROM auftrag, kunde
-      WHERE auftrag.kunden_id = kunde.kunden_id
-        AND auftrag.datum BETWEEN "' . $_GET['jahr'] . '-01-01" AND "' . $_GET['jahr'] . '-12-31";'
-);
-
+$statement = new OrdersInYearStatement($db);
+$result    = $statement->execute((int) $_GET['jahr']);
 $auftraege = [];
 
 foreach ($result as $row) {

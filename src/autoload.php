@@ -9,7 +9,9 @@ spl_autoload_register(
             $classes = array(
                 'configuration' => '/Configuration.php',
                 'database' => '/Database.php',
-                'factory' => '/Factory.php'
+                'factory' => '/Factory.php',
+                'mysqldatabase' => '/MysqlDatabase.php',
+                'ordersinyearstatement' => '/OrdersInYearStatement.php'
             );
         }
         $cn = strtolower($class);
