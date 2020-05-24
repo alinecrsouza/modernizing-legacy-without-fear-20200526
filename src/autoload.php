@@ -14,6 +14,7 @@ spl_autoload_register(
                 'orderlistaction' => '/OrderListAction.php',
                 'ordermapper' => '/OrderMapper.php',
                 'ordersinyearstatement' => '/OrdersInYearStatement.php',
+                'request' => '/Request.php',
                 'response' => '/Response.php'
             );
         }

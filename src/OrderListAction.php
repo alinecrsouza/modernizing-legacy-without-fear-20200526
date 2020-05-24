@@ -18,9 +18,9 @@ final class OrderListAction
         $this->mapper    = $mapper;
     }
 
-    public function execute(): Response
+    public function execute(Request $request): Response
     {
-        $rows = $this->statement->execute((int) $_GET['jahr']);
+        $rows = $this->statement->execute((int) $request->get('jahr'));
 
         $data = $this->mapper->map($rows);
 

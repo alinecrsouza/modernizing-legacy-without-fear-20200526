@@ -10,9 +10,8 @@ final class OrderIntegrationTest extends TestCase
      */
     public function test_can_be_retrieved_as_JSON_document_by_HTTP_request(): void
     {
-        $_GET['jahr'] = 2020;
-
-        $response = (new Factory())->getOrderListAction()->execute();
+        $request  = Request::fromParameters(['jahr' => '2020']);
+        $response = (new Factory())->getOrderListAction()->execute($request);
 
         $json   = $response->body();
         $orders = json_decode($json, true);
