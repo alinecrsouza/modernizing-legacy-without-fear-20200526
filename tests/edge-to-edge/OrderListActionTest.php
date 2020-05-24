@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-final class OrderIntegrationTest extends TestCase
+final class OrderListActionTest extends TestCase
 {
     /**
      * @medium
