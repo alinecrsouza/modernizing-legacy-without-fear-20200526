@@ -12,7 +12,8 @@ spl_autoload_register(
                 'factory' => '/Factory.php',
                 'mysqldatabase' => '/MysqlDatabase.php',
                 'ordermapper' => '/OrderMapper.php',
-                'ordersinyearstatement' => '/OrdersInYearStatement.php'
+                'ordersinyearstatement' => '/OrdersInYearStatement.php',
+                'response' => '/Response.php'
             );
         }
         $cn = strtolower($class);
