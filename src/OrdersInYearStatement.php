@@ -15,7 +15,10 @@ final class OrdersInYearStatement
     public function execute(int $year): array
     {
         return $this->database->query(
-            'SELECT *
+            'SELECT auftrag.auftrag_id,
+                    auftrag.datum,
+                    kunde.name,
+                    kunde.anschrift
                FROM auftrag, kunde
               WHERE auftrag.kunden_id = kunde.kunden_id
                 AND auftrag.datum BETWEEN "' . $year . '-01-01" AND "' . $year . '-12-31";'
