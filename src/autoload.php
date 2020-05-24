@@ -11,6 +11,7 @@ spl_autoload_register(
                 'database' => '/Database.php',
                 'factory' => '/Factory.php',
                 'mysqldatabase' => '/MysqlDatabase.php',
+                'ordermapper' => '/OrderMapper.php',
                 'ordersinyearstatement' => '/OrdersInYearStatement.php'
             );
         }

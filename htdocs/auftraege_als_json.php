@@ -5,16 +5,10 @@ $factory = new Factory;
 $db = $factory->getDatabase();
 
 $statement = new OrdersInYearStatement($db);
-$result    = $statement->execute((int) $_GET['jahr']);
-$auftraege = [];
+$rows      = $statement->execute((int) $_GET['jahr']);
 
-foreach ($result as $row) {
-    $auftraege[] = [
-        'Auftragsnummer' => $row['auftrag_id'],
-        'Datum' => (new DateTimeImmutable($row['datum']))->format('d.m.Y'),
-        'Auftraggeber' => $row['name'] . ', ' . $row['anschrift']
-    ];
-}
+$mapper = new OrderMapper;
+$data = $mapper->map($rows);
 
 header('Content-Type: application/json; charset=utf-8');
-print json_encode($auftraege) . PHP_EOL;
+print json_encode($data) . PHP_EOL;
